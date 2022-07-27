@@ -1,4 +1,4 @@
-id,title,genre,rating,release_year
+movie_id,title,genre,rating,release_year
 1,Lord of The Rings,Fantasy,PG,2015
 2,Memento,Drama,PG13,2001
 3,A Beautiful Mind,Drama,PG,208
