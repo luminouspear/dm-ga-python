@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block header %}
+{%endblock%}
+{%block content%}
+<div class="flex flex-col lg:flex-row flex-wrap align-items-center justify-center space-y-12 ">
+    {% for car in car_list %}
+
+
+    <div
+        class="  box-border py-4 px-4 mx-4 basis-1/4 flex flex-col justify-center align-items-center bg-white shadow-md rounded hover:shadow-xl ">
+        <a href="/cars/{{car.id}}">
+            <div class="border-red-500 border-1 h-32
+             bg-gray-200 rounded-lg mb-4"></div>
+            <div class="border-green-500 border-1 container">
+                <ul class=" w-full decoration-none ">
+                    <li class="capitalize text-sm font-light text-black/50 -mb-1 w-">{{car.make}}</li>
+                    <li class="capitalize text-lg font-bold">{{car.model}}</li>
+                    <li class="">{{car.year}}</li>
+                    <li class="before:content-['$']">{{car.price}}</li>
+                    <li class="capitalize"><span
+                            class="px-1.5 border-1 border-black/20 mr-2  bg-[{{car.color}}] rounded content-none">&nbsp;</span>{{car.color}}
+                    </li>
+                    <li class="after:content-[' miles'] text-md text-bold">{{car.mileage}}</li>
+                </ul>
+        </a>
+        <form action="/cars/{{car.id}}/delete" method="post">
+            <button class="text-sm text-gray-800 hover:text-red-500 py-4" value="{{car.id}}"
+                name="delete">remove</button>
+        </form>
+
+
+    </div>
+
+</div>
+
+{%endfor%}
+</div>
+{% endblock %}

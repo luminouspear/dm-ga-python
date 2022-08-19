@@ -1,0 +1,15 @@
+id,name,description,price
+1,paper towels,these are paper towels,12.99
+2,baby wipes,"ImmutableMultiDict([('name', 'baby wipes'), ('description', 'these are baby wipes'), ('price', '5.01')])",
+3,something,something,2.0
+4,something,something,2.0
+5,something,something,2.0
+6,asd,asd,232.0
+7,asd,asd ,2322.0
+8,asd,asd ,23222.0
+9,asd,asd ,23222.0
+10,23,23,455.0
+11,123,123,45512.0
+12,rbead,something,20392.0
+13,asd,241,7676.0
+14,something,something,22.0
