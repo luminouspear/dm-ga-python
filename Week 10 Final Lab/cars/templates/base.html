@@ -2,22 +2,26 @@
 <title>{% block title %}{% endblock %} - Flaskr</title>
 <script src="https://cdn.tailwindcss.com"></script>
 
-<nav class="container px-4 mx-auto flex justify-between py-6 bg-red-400">
-    <a class="font-bold text-2xl " href="/">
-        Car List - the List of Cars
-    </a>
 
-    <ul class="flex flex-row">
-
-        <li class="bg-cyan-500 flex justify-center items-center px-4 py-2 rounded">
-            <a class="text-white font-bold" href="/new">Add New Car</a>
-        </li>
-    </ul>
-
-</nav>
 <section class="content container mx-auto ">
+
+    {% block header %}
     <header>
-        {% block header %}{% endblock %}
+        <nav class="container px-4 mx-auto flex justify-between py-6 bg-red-400">
+            <a class="font-bold text-2xl " href="/">
+                Car List - the List of Cars
+            </a>
+
+            <ul class="flex flex-row">
+
+                <li class="bg-cyan-500 flex justify-center items-center px-4 py-2 rounded">
+                    <a class="text-white font-bold" href="/new">Add New Car</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    {% endblock %}
     </header>
     {% for message in get_flashed_messages() %}
     <div class="flash">{{ message }}</div>
