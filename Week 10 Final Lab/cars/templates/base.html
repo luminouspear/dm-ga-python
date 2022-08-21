@@ -1,9 +1,17 @@
-<!doctype html>
-<title>{% block title %}{% endblock %} - Flaskr</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Car Database CRUD Application{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<main class="content container mx-auto ">
+</head>
+
+<body class="content container mx-auto ">
 
     {% block header %}
     <header>
@@ -24,4 +32,6 @@
     {% endblock %}
     {% block content %}
     {% endblock %}
-</main>
+</body>
+
+</html>
