@@ -1,2 +1,7 @@
 .DS_Store
 Python Projects/
+
+python_projects/keynote/build/
+python_projects/keynote/dist/
+python_projects/keynote/.eggs/
+python_projects/keynote/__pycache__/

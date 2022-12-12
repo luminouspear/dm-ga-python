@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+<div class="container px-4 my-2 transition alert-box fade duration-250 " id="alert-box">
+    <div
+        class="flex flex-row items-center justify-between w-full px-4 py-2 mx-4 my-2 text-sm font-bold bg-yellow-300 border-red-400 border-1 ">
+        <div class="text-sm font-bold text-gray-800 ">{{ message }}</div>
+        <div class="flex items-center justify-center w-8 h-8"><i
+                class="m-2 text-lg text-gray-800 cursor-pointer fa-solid fa-xmark close" id="close"></i></div>
+    </div>
+</div>
+{% endfor %}
+
+
+{% if name %}
+
+<h1 class="mx-4 my-6 text-2xl font-bold">Hello {{name}}!!!</h1>
+
+{%else%}
+
+<div class="w-7/12 py-6 mx-auto my-12 bg-slate-200">
+    <div class="flex flex-col justify-center w-full px-4 items-middle ">
+        <h1 class="text-2xl text-center text-bold">What's your name?</h1>
+        <form method="POST" class="">
+            {{ form.hidden_tag() }}
+            {{ form.name.label(
+            class="w-full my-2"
+            ) }}
+            {{ form.name(
+            class="w-full px-2 py-1 my-2 border-2 border-gray-200"
+            ) }}
+            <br>
+            {{ form.submit(
+            class="w-full py-2 font-bold text-white bg-gray-400"
+            ) }}
+        </form>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+{% block javascript %}
+<script>
+    document.getElementById('close').addEventListener('click', function () {
+        document.getElementById('alert-box').classList.add('hidden')
+    })
+</script>
+{% endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TV Controller</title>
+</head>
+
+<body class="bg-black container mx-auto">
+
+    <form class="grid grid-cols-4 container mx-auto mt-24 gap-2 w-10/12"
+    id="input_form"">
+        <div
+            class="flex flex-col w-full bg-white h-auto rounded opacity-80 hover:opacity-90 font-bold text-black text-xl items-center px-2">
+            <img src={{url_for('static', filename='hdmi.png' )}} alt="hdmi icon" class="w-1/2">
+            <a class="w-full text-center" href="input/com.webos.app.hdmi1">HDMI
+                1</a>
+        </div>
+        <div
+            class="flex flex-col w-full bg-white h-auto rounded opacity-80 hover:opacity-90 font-bold text-black text-xl items-center px-2">
+            <img src={{url_for('static', filename='hdmi.png' )}} alt="hdmi icon" class="w-1/2">
+            <input class="w-full text-center" href="input/com.webos.app.hdmi2" value="HDMI 2" type="submit" />
+        </div>
+        <div
+            class="flex flex-col w-full bg-white h-auto rounded opacity-80 hover:opacity-90 font-bold text-black text-xl items-center px-2">
+            <img src={{url_for('static', filename='hdmi.png' )}} alt="hdmi icon" class="w-1/2">
+            <a class="w-full text-center" href="input/com.webos.app.hdmi3">HDMI
+                3</a>
+        </div>
+        <div
+            class="flex flex-col w-full bg-white h-auto rounded opacity-80 hover:opacity-90 font-bold text-black text-xl items-center px-2">
+            <img src={{url_for('static', filename='hdmi.png' )}} alt="hdmi icon" class="w-1/2">
+            <a class="w-full text-center" href="input/com.webos.app.hdmi4">HDMI
+                4</a>
+        </div>
+
+    </form>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript">
+    $('#input_form').submit(function(e) {
+        e.preventDefault();
+
+        var data = {}
+        var Form = this
+
+        $.each(this.elements, function(i,v) {
+            var input = $(v)
+            data[input.attr()]
+        })
+    })
+</script>
+
+</body>
+
+</html>

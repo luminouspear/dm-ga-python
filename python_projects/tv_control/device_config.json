@@ -1,0 +1,41 @@
+{
+    "devices": [
+        {
+            "name": "Quentin's TV",
+            "ip": "192.168.0.11",
+            "mac": "38:8C:50:26:DD:51",
+            "pollingInterval": 5,
+            "deepDebugLog": true,
+            "volumeLimit": 100,
+            "volumeControl": "both",
+            "channelControl": false,
+            "mediaControl": true,
+            "screenControl": true,
+            "screenSaverControl": true,
+            "channelButtons": [
+                {
+                    "channelNumber": 0
+                }
+            "appButtons": [
+                {
+                    "appId": "com.webos.app.hdmi3",
+                    "name": "Mac"
+                },
+                {
+                    "appId": "com.webos.app.hdmi4",
+                    "name": "PC"
+                },
+                {
+                    "appId": "com.webos.app.hdmi2",
+                    "name": "Consoles"
+                },
+                {
+                    "appId": "com.webos.app.hdmi4",
+                    "name": "Shield"
+                }
+            ]
+          ]
+        }
+    ],
+    "platform": "webostv"
+}

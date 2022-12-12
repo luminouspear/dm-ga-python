@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <form method="post" action="/changeinput/" id="input_form">
+        <input type="submit" value="HDMI1" name="inputs">
+        <input type="submit" value="HDMI2" name="inputs">
+        <input type="submit" value="HDMI3" name="inputs">
+        <input type="submit" value="HDMI4" name="inputs">
+
+    </form>
+    <form method="post" action="/" id="volume_form">
+        <input type="submit" value="Volume_up" name="volume">
+        <input type="submit" value="Volume_down" name="volume">
+
+    </form>
+
+    <!-- <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript">
+        $('#input_form').submit(function (e) {
+            e.preventDefault();
+            console.log(e)
+
+            var data = {};
+            var Form = this;
+
+            $.each(this.elements, function (i, v) {
+                var input = $(v);
+                console.log(`${$(v).val()}`)
+                data[input.attr("name")] = input.val();
+                delete data["undefined"];
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: '/changeinput/',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(data),
+                context: Form,
+                success: function (callback) {
+                    console.log(callback);
+
+                    $(this).text('Hello ' + callback.first_name + ' ' + callback.last_name + '!');
+                },
+                error: function () {
+                    $(this).html("error!");
+                }
+            });
+        });
+    </script> -->
+</body>
+
+</html>
