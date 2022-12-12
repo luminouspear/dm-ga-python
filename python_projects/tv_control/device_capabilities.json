@@ -1,0 +1,15 @@
+{
+    "inputs": {
+        "hdmi1": "com.webostv.app.hdmi1",
+        "hdmi2": "com.webostv.app.hdmi2",
+        "hdmi3": "com.webostv.app.hdmi3",
+        "hdmi4": "com.webostv.app.hdmi4"
+    },
+    "power": {
+        "on": "on",
+        "off": "off"
+    },
+    "get-id": {
+        "id": ""
+    }
+}
