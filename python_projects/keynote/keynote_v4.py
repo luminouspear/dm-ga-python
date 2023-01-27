@@ -1,23 +1,26 @@
-import os
-import sys
-import tkinter as tk
-from tkinter import filedialog
 
-import pptx
+import tkinter as tk
+from TkinterDnD2 import DND_FILES, TkinterDnD
 from pptx import Presentation
+
+dst_dir = "/Users/quentinmacbook/Library/Mobile Documents/com~apple~Keynote/Documents/_output/UXDI 34"
 
 def convert_file(filepath):
     # open the keynote file using keynote-parser
     presentation = Presentation(filepath)
+    base = dst_dir + filepath.split("/")[-1]
 
     # save the file as a keynote
-    presentation.save(f"{dst_dir}/{filepath.split('/')[-1]}.key")
+    keynote_name = base + ".key"
+    presentation.save(keynote_name)
 
     # save the file as a powerpoint
-    presentation.save(f"{dst_dir}/{filepath.split('/')[-1]}.pptx")
+    pptx_name = base + ".pptx"
+    presentation.save(pptx_name)
 
     # save the file as a pdf
-    pdf_file = (f"{dst_dir}/{filepath.split('/')[-1]}.pdf")
+    pdf_file = (base + ".pdf")
+
 
     for slide in presentation.slides:
         pdf_file.write(slide.image)
@@ -27,12 +30,12 @@ def convert_file(filepath):
 def drop_file_callback(event):
     #get the filepath from the event data
     filepath = event.data
-    label["text"] = f"Converting file: {filepath}"
+    label["text"] = "Converting file: " + filepath
     convert_file(filepath)
-    label["text"] = "✅ Conversion complete"
+    label["text"] = "Conversion complete"
 
 # create the Tkinter root window
-root = tk.Tk()
+root = TkinterDnD.Tk()
 
 # set the window title and size
 root.title("Keynote Converter")
@@ -46,27 +49,27 @@ label.pack()
 root.bind("<<Drop>>", drop_file_callback)
 
 # enable file dropping on the Tkinter window
-root.drop_target_register(tk.DND_FILES)
+root.drop_target_register(DND_FILES)
 
 # start the Tkinter main event loop
 root.mainloop()
 
-# create the Tkinter root window
-root = tk.Tk()
+# # create the Tkinter root window
+# root = tk.Tk()
 
-# set the window title and size
-root.title("Keynote Converter")
-root.geometry("600x400")
+# # set the window title and size
+# root.title("Keynote Converter")
+# root.geometry("600x400")
 
-# create a Tkinter label to display the drop zone message
-label = tk.Label(root, text="Drop Keynote File Here", font=("sans serif", 24))
-label.pack()
+# # create a Tkinter label to display the drop zone message
+# label = tk.Label(root, text="Drop Keynote File Here", font=("sans serif", 24))
+# label.pack()
 
-# bind the "Drop" event to the drop_file_callback function
-root.bind("<<Drop>>", drop_file_callback)
+# # bind the "Drop" event to the drop_file_callback function
+# root.bind("<<Drop>>", drop_file_callback)
 
-# enable file dropping on the Tkinter window
-root.drop_target_register(tk.DND_FILES)
+# # enable file dropping on the Tkinter window
+# root.drop_target_register(DND_FILES)
 
-# start the Tkinter main event loop
-root.mainloop()
+# # start the Tkinter main event loop
+# root.mainloop()
