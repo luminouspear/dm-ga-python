@@ -2,6 +2,7 @@ from setuptools import setup
 
 APP = ['output.py']
 DATA_FILES = []
+<<<<<<< HEAD
 OPTIONS = {'argv_emulation': True,
     'plist': {
         'CFBundleName': 'Keynote Converter',
@@ -12,6 +13,9 @@ OPTIONS = {'argv_emulation': True,
         'NSHumanReadbleCopyright': 'Copyright (c) 2022 Dan McCollum'
 
     }}
+=======
+OPTIONS = {'argv_emulation': True,}
+>>>>>>> refs/remotes/origin/main
 
 setup(
     app=APP,
